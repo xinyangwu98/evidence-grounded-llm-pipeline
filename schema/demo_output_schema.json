@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SyntheticEvidenceGroundedFinding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "answer_id",
+    "query",
+    "stance",
+    "policy_levers",
+    "entities",
+    "confidence",
+    "needs_review",
+    "evidence",
+    "aggregation"
+  ],
+  "properties": {
+    "answer_id": {
+      "type": "string"
+    },
+    "query": {
+      "type": "string"
+    },
+    "stance": {
+      "type": "string",
+      "enum": ["support", "mixed", "insufficient"]
+    },
+    "policy_levers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "finance",
+          "talent",
+          "infrastructure",
+          "market_access",
+          "research",
+          "green_transition",
+          "data_governance"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "needs_review": {
+      "type": "boolean"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["chunk_id", "doc_id", "title", "score", "snippet"],
+        "properties": {
+          "chunk_id": {"type": "string"},
+          "doc_id": {"type": "string"},
+          "title": {"type": "string"},
+          "score": {"type": "number"},
+          "snippet": {"type": "string"}
+        }
+      }
+    },
+    "aggregation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["models", "agreement", "vote_margin"],
+      "properties": {
+        "models": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "agreement": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "vote_margin": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    }
+  }
+}

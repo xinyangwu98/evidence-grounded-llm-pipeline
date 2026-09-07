@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>evidence-grounded-llm-pipeline</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <img src="assets/pipeline-mark.svg" alt="" class="brand-mark">
+        <div>
+          <h1>evidence-grounded-llm-pipeline</h1>
+          <p>Synthetic method demo. No production prompt, private corpus, API key, or empirical result is used.</p>
+        </div>
+      </div>
+      <div class="status-strip" aria-label="Pipeline status">
+        <span id="docCount">0 docs</span>
+        <span id="chunkCount">0 chunks</span>
+        <span id="schemaStatus">schema ready</span>
+      </div>
+    </header>
+
+    <section class="workspace">
+      <aside class="control-panel" aria-label="Pipeline controls">
+        <div class="query-box">
+          <label for="queryInput">Question</label>
+          <textarea id="queryInput" rows="4">Which policy levers support digital upgrading in manufacturing?</textarea>
+        </div>
+
+        <div class="control-grid">
+          <label>
+            <span>Chunk words</span>
+            <input id="chunkSize" type="range" min="18" max="56" value="34">
+            <output id="chunkSizeOut">34</output>
+          </label>
+          <label>
+            <span>Overlap words</span>
+            <input id="overlapSize" type="range" min="0" max="14" value="6">
+            <output id="overlapSizeOut">6</output>
+          </label>
+          <label>
+            <span>Top-k</span>
+            <input id="topK" type="range" min="2" max="6" value="4">
+            <output id="topKOut">4</output>
+          </label>
+        </div>
+
+        <fieldset class="model-set">
+          <legend>Aggregation pool</legend>
+          <label><input type="checkbox" class="modelToggle" value="extractive" checked> Extractive</label>
+          <label><input type="checkbox" class="modelToggle" value="semantic" checked> Semantic</label>
+          <label><input type="checkbox" class="modelToggle" value="skeptical" checked> Skeptical</label>
+        </fieldset>
+
+        <div class="button-row">
+          <button id="runBtn" type="button">Run pipeline</button>
+          <button id="copyBtn" class="secondary" type="button">Copy JSON</button>
+        </div>
+
+        <div class="case-list" aria-label="Evaluation cases">
+          <div class="panel-heading">
+            <h2>Evaluation</h2>
+            <span id="evalSummary">0 reviewed</span>
+          </div>
+          <div id="caseButtons" class="case-buttons"></div>
+          <div class="rating-buttons">
+            <button type="button" data-rating="accurate">Accurate</button>
+            <button type="button" data-rating="partial">Partial</button>
+            <button type="button" data-rating="miss">Miss</button>
+          </div>
+          <label class="note-box">
+            <span>Reviewer note</span>
+            <textarea id="reviewNote" rows="3" placeholder="Optional audit note"></textarea>
+          </label>
+        </div>
+      </aside>
+
+      <section class="main-panel">
+        <nav class="pipeline-nav" aria-label="Pipeline stages">
+          <button class="stage active" data-stage="chunks">Chunking</button>
+          <button class="stage" data-stage="retrieval">Retrieval</button>
+          <button class="stage" data-stage="schema">Schema</button>
+          <button class="stage" data-stage="models">Models</button>
+          <button class="stage" data-stage="trace">Trace</button>
+          <button class="stage" data-stage="eval">Eval</button>
+        </nav>
+
+        <section class="stage-card" id="chunksPanel">
+          <div class="panel-heading">
+            <h2>Chunking</h2>
+            <span id="chunkStats">ready</span>
+          </div>
+          <div id="chunksView" class="chunk-grid"></div>
+        </section>
+
+        <section class="stage-card hidden" id="retrievalPanel">
+          <div class="panel-heading">
+            <h2>Retrieval</h2>
+            <span id="retrievalStats">ready</span>
+          </div>
+          <div id="retrievalView" class="evidence-list"></div>
+        </section>
+
+        <section class="stage-card hidden" id="schemaPanel">
+          <div class="panel-heading">
+            <h2>Constrained Schema</h2>
+            <span id="validationBadge">valid</span>
+          </div>
+          <pre id="schemaView" class="code-pane"></pre>
+        </section>
+
+        <section class="stage-card hidden" id="modelsPanel">
+          <div class="panel-heading">
+            <h2>Multi-Model Aggregation</h2>
+            <span id="agreementBadge">agreement 0.00</span>
+          </div>
+          <div id="modelsView" class="model-grid"></div>
+        </section>
+
+        <section class="stage-card hidden" id="tracePanel">
+          <div class="panel-heading">
+            <h2>Evidence Traceability</h2>
+            <span id="traceBadge">0 evidence links</span>
+          </div>
+          <div id="traceView" class="trace-grid"></div>
+        </section>
+
+        <section class="stage-card hidden" id="evalPanel">
+          <div class="panel-heading">
+            <h2>Evaluation Interface</h2>
+            <span id="metricBadge">no ratings</span>
+          </div>
+          <div id="evalView" class="eval-grid"></div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

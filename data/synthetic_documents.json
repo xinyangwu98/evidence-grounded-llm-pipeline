@@ -1,0 +1,44 @@
+[
+  {
+    "doc_id": "SYN-PLAN-001",
+    "title": "Synthetic Plan Note: Advanced Manufacturing District",
+    "year": 2025,
+    "source_type": "demo_policy_note",
+    "text": "The district will establish a shared robotics testing lab and a procurement channel for small manufacturers. Grants will favor firms that document sensor integration, production data standards, and worker retraining plans. The note does not mention export rebates or preferential tax treatment."
+  },
+  {
+    "doc_id": "SYN-REPORT-002",
+    "title": "Synthetic City Report: Port Logistics Upgrade",
+    "year": 2025,
+    "source_type": "demo_city_report",
+    "text": "The city report prioritizes automated warehousing, port scheduling software, and unified cargo data interfaces. It links infrastructure investment with market access for local logistics providers. Environmental compliance is listed as a review condition rather than a subsidy target."
+  },
+  {
+    "doc_id": "SYN-FIRM-003",
+    "title": "Synthetic Firm Filing: Battery Materials Producer",
+    "year": 2025,
+    "source_type": "demo_firm_filing",
+    "text": "The company describes a pilot line for battery material recycling and an internal data governance board. It reports collaboration with a university lab but states that financing remains uncertain. No municipal talent program is cited."
+  },
+  {
+    "doc_id": "SYN-PLAN-004",
+    "title": "Synthetic Plan Note: Textile Cloud Platform",
+    "year": 2024,
+    "source_type": "demo_policy_note",
+    "text": "The plan supports a cloud platform for textile design orders, supplier matching, and quality traceability. It highlights training vouchers for digital operators and shared infrastructure for small workshops. Research grants are not a central instrument in this note."
+  },
+  {
+    "doc_id": "SYN-REPORT-005",
+    "title": "Synthetic City Report: Agricultural Sensor Network",
+    "year": 2024,
+    "source_type": "demo_city_report",
+    "text": "The report proposes soil sensors, irrigation dashboards, and cooperative data sharing for farms. Funding is assigned to rural broadband infrastructure and technical service teams. The report frames green transition as an expected outcome of water saving."
+  },
+  {
+    "doc_id": "SYN-AUDIT-006",
+    "title": "Synthetic Audit Memo: Evidence Quality Flags",
+    "year": 2025,
+    "source_type": "demo_audit_memo",
+    "text": "Auditors require every extracted claim to carry at least one chunk identifier. Findings with only generic digitalization language should be marked insufficient. Conflicting model labels should trigger manual review before downstream aggregation."
+  }
+]
