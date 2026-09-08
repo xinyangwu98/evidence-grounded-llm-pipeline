@@ -112,9 +112,11 @@ See [research_pipeline/annual_reports](research_pipeline/annual_reports/README.m
 
 ## Traditional Topic Modeling of Annual Reports
 
-LDA is used as an auxiliary traditional topic-modeling method for exploratory measurement of digitalization-related language in annual reports. It is separate from the LLM-based structured extraction pipeline.
+LDA is used as an auxiliary traditional topic-modeling method to characterize digitalization-related language in annual reports. It is separate from the LLM-based structured extraction pipeline.
 
-No LDA figure is shown among the homepage's core research figures. Supplementary annual-report visualizations are documented under [research_pipeline/annual_reports](research_pipeline/annual_reports/README.md).
+![LDA topic structure in annual reports](assets/research/annual_report_lda_topics_en.png)
+
+Supplementary annual-report visualizations are documented under [research_pipeline/annual_reports](research_pipeline/annual_reports/README.md).
 
 ## Public Code Example
 

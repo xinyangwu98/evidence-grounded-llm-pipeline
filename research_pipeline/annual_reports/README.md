@@ -13,6 +13,18 @@ Annual-report analysis provides firm-year text-derived measures that are used do
 - year-level and firm-year aggregation
 - comparison with downstream empirical variables
 
+## LDA Topic Structure
+
+The English figure below is rebuilt from aggregate LDA outputs: topic-word probabilities from the trained T4 model and mean topic prevalence from yearly topic probabilities.
+
+![LDA topic structure in annual reports](../../assets/research/annual_report_lda_topics_en.png)
+
+Rebuild command when the private LDA output directory is available:
+
+```bash
+python research_pipeline/annual_reports/plot_lda_topics.py --lda-out-dir <path-to-LDA-out>
+```
+
 ## Method Boundary
 
 LDA is a traditional topic-modeling method. It is not treated as an LLM method in this repository. The LLM stages are constrained semantic interpretation, structured extraction, multi-model comparison, and evidence-linked verification.
