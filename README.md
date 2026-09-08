@@ -14,65 +14,45 @@ The project studies how centrally encouraged industrial policies are translated 
 
 The core contribution is not a standalone chatbot. It is a measurement pipeline that turns long policy and government-report text into auditable, source-linked indicators that can be evaluated quantitatively.
 
-## Research Pipeline
+## Technical Pipeline
 
-```mermaid
-flowchart TD
-  A[Central policy texts and local government reports] --> B[Layer 1: Retrieval / Recall]
-  B --> B1[Document chunking]
-  B --> B2[Sparse / dense candidate retrieval]
-  B --> B3[MacBERT high-recall filtering]
+![Technical pipeline](assets/research/technical_pipeline.png)
 
-  B1 --> C[Layer 2: LLM Semantic Measurement]
-  B2 --> C
-  B3 --> C
-  C --> C1[Constrained industry interpretation]
-  C --> C2[Structured narrative extraction]
-  C --> C3[Multi-LLM comparison and aggregation]
-  C --> C4[Evidence-linked verification]
-
-  C1 --> D[Layer 3: Downstream Measurement]
-  C2 --> D
-  C3 --> D
-  C4 --> D
-  D --> D1[Policy-industry indicators]
-  D --> D2[PPMI narrative network]
-  D --> D3[Community, entropy, and dominant-share measures]
-  D --> D4[Panel econometrics and robustness checks]
-```
+*Figure 1. Technical Pipeline.*
 
 ## Where ML and LLMs Enter
 
 | Stage | Main method | Role |
 | --- | --- | --- |
 | Candidate span recall | **MacBERT / neural ML** | High-recall filtering of local government reports |
-| Long-document candidate retrieval | **Sparse / dense retrieval** | Retrieve traceable policy evidence |
+| Long-document candidate retrieval | **Sparse / dense retrieval** | Retrieval layer for traceable policy evidence |
+| Annual-report topic exploration | **LDA / traditional topic modeling** | Auxiliary exploratory measurement of digitalization-related language |
 | Semantic industry interpretation | **LLMs** | Interpret indirect policy encouragement under constrained labels |
 | Structured field extraction | **LLMs** | Extract narrative fields from recalled report spans |
 | Cross-model validation | **Multi-LLM** | Compare and aggregate semantic outputs |
 | Evidence verification | **LLM + rule checks + human review** | Link labels back to source evidence |
-| Narrative structure | **PPMI network + community detection** | Construct higher-level local narrative measures |
-| Econometric analysis | **Panel econometrics** | Downstream empirical evaluation |
-
-## LLM Measurement Pattern
-
-![Sanitized multi-LLM evidence verification schematic](assets/research/multi_llm_evidence_verification.svg)
+| Narrative structure | **PPMI network + community detection** | Downstream network measurement after structured extraction |
+| Econometric analysis | **Panel econometrics** | Downstream empirical evaluation, not an LLM stage |
 
 ## Representative Research Outputs
 
 The figures below are selected aggregate outputs from the research workflow. They are included to show the end-to-end path from text processing to measurement, not to release the underlying private corpora or case-level annotations.
 
-### LLM-Derived Central Policy-Industry Coverage
+### Figure 2. LLM-Derived Central Policy-Industry Coverage
 
-Aggregate policy-industry indicators constructed from retrieval, constrained multi-LLM semantic labeling, normalization, and evidence verification.
+Aggregate policy-industry indicators constructed from retrieval, constrained multi-LLM semantic interpretation, normalization, cross-model aggregation, and evidence verification.
 
 ![Policy-industry heatmap](assets/research/policy_industry_heatmap_en.png)
 
-### Local Industrial Narrative Network
+### Figure 3. Local Industrial Narrative Network
+
+This is PPMI network measurement after LLM structured extraction and label normalization. It is a downstream narrative-measurement output, not a direct LLM output.
 
 ![Industry narrative co-occurrence network](assets/research/cooccurrence_network_en.png)
 
-### Spatial Distribution of Dominant Local Narratives
+### Figure 4. Spatial Distribution of Dominant Local Narratives
+
+This is a downstream spatial and empirical visualization of dominant local narrative communities.
 
 ![Narrative community map](assets/research/narrative_map_14th_fyp_en.png)
 
@@ -122,6 +102,20 @@ See [research_pipeline/network](research_pipeline/network/README.md).
 
 See [research_pipeline/evaluation](research_pipeline/evaluation/README.md).
 
+### Annual Report Digitalization Measurement
+
+- dictionary-based and topic-modeling checks for annual-report language
+- LDA as an auxiliary traditional topic-modeling method
+- firm-year digitalization language measures used separately from LLM structured extraction
+
+See [research_pipeline/annual_reports](research_pipeline/annual_reports/README.md).
+
+## Traditional Topic Modeling of Annual Reports
+
+LDA is used as an auxiliary traditional topic-modeling method for exploratory measurement of digitalization-related language in annual reports. It is separate from the LLM-based structured extraction pipeline.
+
+No LDA figure is shown among the homepage's core research figures. Supplementary annual-report visualizations are documented under [research_pipeline/annual_reports](research_pipeline/annual_reports/README.md).
+
 ## Public Code Example
 
 A small synthetic example is included to demonstrate the code interfaces without exposing unpublished materials. It is deliberately separate from the research data and production prompt stack.
@@ -164,6 +158,7 @@ Full reproduction of the unpublished paper requires private corpora, annotation 
 ## Repository Map
 
 - `assets/research/`: selected aggregate research figures
+- `assets/research/supplementary/`: descriptive supplementary figures kept off the README homepage
 - `research_pipeline/`: sanitized module-level workflow descriptions
 - `docs/`: methodology and reproducibility notes
 - `src/evidence_pipeline/`: replaceable Python RAG/LLM pipeline prototype
