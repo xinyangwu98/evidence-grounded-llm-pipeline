@@ -21,4 +21,10 @@ The public repository does not release the raw corpus, full dictionaries, privat
 
 ## Public Outputs
 
-The public README includes a selected aggregate policy-by-industry heatmap. It demonstrates the final measurement layer without exposing source chunks or prompt text.
+The public README includes selected aggregate policy-by-industry and policy-lever-by-industry heatmaps. They demonstrate the final measurement layer without exposing source chunks or prompt text.
+
+The policy-lever intensity figure can be rebuilt from a sanitized public matrix:
+
+```bash
+python research_pipeline/ip/plot_policy_lever_heatmap.py
+```

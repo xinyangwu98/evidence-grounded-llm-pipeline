@@ -44,13 +44,19 @@ Aggregate policy-industry indicators constructed from retrieval, constrained mul
 
 ![Policy-industry heatmap](assets/research/policy_industry_heatmap_en.png)
 
-### Figure 3. Local Industrial Narrative Network
+### Figure 3. Policy-Lever Intensity across Industries
+
+Policy-lever intensity across industries, constructed from the central policy extraction workflow. The public figure removes internal experiment labels from the title while preserving the underlying matrix values.
+
+![Policy-lever intensity across industries](assets/research/policy_lever_intensity_industry_en.png)
+
+### Figure 4. Local Industrial Narrative Network
 
 This is PPMI network measurement after LLM structured extraction and label normalization. It is a downstream narrative-measurement output, not a direct LLM output.
 
 ![Industry narrative co-occurrence network](assets/research/cooccurrence_network_en.png)
 
-### Figure 4. Spatial Distribution of Dominant Local Narratives
+### Figure 5. Spatial Distribution of Dominant Local Narratives
 
 This is a downstream spatial and empirical visualization of dominant local narrative communities.
 
