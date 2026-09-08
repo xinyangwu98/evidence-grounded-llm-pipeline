@@ -46,7 +46,7 @@ Aggregate policy-industry indicators constructed from retrieval, constrained mul
 
 ### Figure 3. Policy-Lever Intensity across Industries
 
-Policy-lever intensity across industries, constructed from the central policy extraction workflow. The public figure removes internal experiment labels from the title while preserving the underlying matrix values.
+Policy-lever intensity across industries, constructed from the central policy extraction workflow. The public figure removes internal experiment labels from the title and presents only the rendered heatmap, without publishing the exact underlying matrix values.
 
 ![Policy-lever intensity across industries](assets/research/policy_lever_intensity_industry_en.png)
 
