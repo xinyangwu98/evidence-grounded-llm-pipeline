@@ -1,26 +1,29 @@
 # Release Boundary
 
-This repository is a public methodological demo only.
+This repository is a sanitized public showcase and reproducibility package for a larger unpublished research project.
 
 It contains:
 
-- synthetic documents
+- research pipeline architecture
+- sanitized module-level workflow descriptions
+- selected aggregate research figures
 - a public demonstration schema
-- deterministic browser-side scoring logic
-- a dependency-light Python prototype
+- a dependency-light Python interface prototype
 - optional dense retrieval integration points
 - local mock LLM adapters
 - OpenAI-compatible adapter code without credentials
-- simulated multi-model aggregation outputs
+- synthetic documents for public testing
 - an evidence-traceability and review interface
 
 It does not contain:
 
 - production prompts
-- private corpora
+- raw policy, government-report, or financial-report corpora
 - API keys
 - proxy or runtime configuration
-- embeddings, labels, dictionaries, or model artifacts from the private project
-- empirical data or estimates from the research repository
+- private dictionaries, whitelist tables, labels, embeddings, or model artifacts
+- case-level validation records
+- licensed empirical datasets
+- selected thresholds and tuning parameters
 
-Before publishing updates, verify that new files are demo-only and do not reference private local paths or hidden runtime settings.
+Before publishing updates, verify that new files are public-safe aggregate outputs, sanitized descriptions, or synthetic examples.
