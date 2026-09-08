@@ -22,3 +22,7 @@ This module documents the public structure of the industry narrative network pip
 ## Public Outputs
 
 The public repository includes selected aggregate figures for the co-occurrence network, community transition matrix, and spatial distribution of dominant narratives.
+
+## Community Transition Matrix
+
+![Narrative community transition heatmap](../../assets/research/narrative_transition_en.png)

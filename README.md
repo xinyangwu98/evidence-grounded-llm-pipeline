@@ -18,40 +18,59 @@ The core contribution is not a standalone chatbot. It is a measurement pipeline 
 
 ```mermaid
 flowchart TD
-  A[Central Five-Year Plans and policy catalogs] --> B[Document parsing and chunking]
-  B --> C[High-recall candidate retrieval]
-  C --> D[Constrained multi-LLM industry interpretation]
-  D --> E[Label normalization and cross-model aggregation]
-  E --> F[Source-linked evidence verification]
-  F --> G[Industrial-policy indicators]
+  A[Central policy texts and local government reports] --> B[Layer 1: Retrieval / Recall]
+  B --> B1[Document chunking]
+  B --> B2[Sparse / dense candidate retrieval]
+  B --> B3[MacBERT high-recall filtering]
 
-  H[Local government work reports] --> I[Human-labeled training data]
-  I --> J[MacBERT high-recall filtering]
-  J --> K[LLM structured extraction]
-  K --> L[Evidence fallback and normalization]
-  L --> M[PPMI co-occurrence network]
-  M --> N[Narrative communities, entropy, and dominant share]
+  B1 --> C[Layer 2: LLM Semantic Measurement]
+  B2 --> C
+  B3 --> C
+  C --> C1[Constrained industry interpretation]
+  C --> C2[Structured narrative extraction]
+  C --> C3[Multi-LLM comparison and aggregation]
+  C --> C4[Evidence-linked verification]
 
-  G --> O[Firm + city + policy panel]
-  N --> O
-  O --> P[Econometric estimation and robustness checks]
+  C1 --> D[Layer 3: Downstream Measurement]
+  C2 --> D
+  C3 --> D
+  C4 --> D
+  D --> D1[Policy-industry indicators]
+  D --> D2[PPMI narrative network]
+  D --> D3[Community, entropy, and dominant-share measures]
+  D --> D4[Panel econometrics and robustness checks]
 ```
+
+## Where ML and LLMs Enter
+
+| Stage | Main method | Role |
+| --- | --- | --- |
+| Candidate span recall | **MacBERT / neural ML** | High-recall filtering of local government reports |
+| Long-document candidate retrieval | **Sparse / dense retrieval** | Retrieve traceable policy evidence |
+| Semantic industry interpretation | **LLMs** | Interpret indirect policy encouragement under constrained labels |
+| Structured field extraction | **LLMs** | Extract narrative fields from recalled report spans |
+| Cross-model validation | **Multi-LLM** | Compare and aggregate semantic outputs |
+| Evidence verification | **LLM + rule checks + human review** | Link labels back to source evidence |
+| Narrative structure | **PPMI network + community detection** | Construct higher-level local narrative measures |
+| Econometric analysis | **Panel econometrics** | Downstream empirical evaluation |
+
+## LLM Measurement Pattern
+
+![Sanitized multi-LLM evidence verification schematic](assets/research/multi_llm_evidence_verification.svg)
 
 ## Representative Research Outputs
 
 The figures below are selected aggregate outputs from the research workflow. They are included to show the end-to-end path from text processing to measurement, not to release the underlying private corpora or case-level annotations.
 
-### Local Industrial Narrative Network
+### LLM-Derived Central Policy-Industry Coverage
 
-![Industry narrative co-occurrence network](assets/research/cooccurrence_network_en.png)
-
-### Central Policy Coverage by Industry
+Aggregate policy-industry indicators constructed from retrieval, constrained multi-LLM semantic labeling, normalization, and evidence verification.
 
 ![Policy-industry heatmap](assets/research/policy_industry_heatmap_en.png)
 
-### Narrative Community Transition Matrix
+### Local Industrial Narrative Network
 
-![Narrative community transition heatmap](assets/research/narrative_transition_en.png)
+![Industry narrative co-occurrence network](assets/research/cooccurrence_network_en.png)
 
 ### Spatial Distribution of Dominant Local Narratives
 
